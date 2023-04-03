@@ -1,0 +1,167 @@
+.messageListWrapper {
+    @media (max-width: 767px) {
+        padding-top: 30px;
+    }
+    @media (min-width: 993px) {
+        padding-left: 30px;
+    }
+    @media (max-width: 1199px) {
+        .senderName {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .messageTopic {
+            padding: 5px 0;
+        }
+    }
+    .centerAll {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .boldText {
+        font-weight: 600;
+    }
+    .underLineBtn {
+        background-color: transparent;
+        border: none;
+        text-decoration: underline;
+        color: #231f20;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .rightSideBtn {
+        display: flex;
+        justify-content: flex-end;
+        .underLineBtn {
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    .MuiTabs-root {
+        button {
+            font-size: 14px;
+            padding-bottom: 12px;
+            color: #231f20;
+            font-weight: normal;
+            &.Mui-selected {
+                font-weight: 600;
+            }
+        }
+        
+        .MuiTabs-indicator {
+            height: 3px;
+            border-radius: 2px;
+        }
+        
+    }
+    .tabContainer {
+        padding-top: 10px;
+    }
+    .messageTableHeader {
+        background: #FAF5EE;
+        border: 0.5px solid #C1A59A40;
+        padding: 5px;
+        .tableActionCol {
+            padding-right: 10px;
+            @media (max-width: 676px) {
+                padding-right: 0;
+            }
+        }
+    }
+    .MuiCheckbox-colorDefault {
+        svg {
+            color: #231f20;
+        }
+    }
+    .tableHeadLeftCol {
+        display: flex;
+    }
+    .tableActionCol {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .tableBody {
+        font-size: 12px;
+        .messageContent {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .tableActionCol {
+            justify-content: space-between;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            @media (max-width: 992px) {
+                .attachedIcon {
+                    height: 20px;
+                    margin-top: 10px;
+                }
+            }
+            @media (min-width: 993px) {
+                flex-direction: row;    
+                align-items: center;
+                
+            }
+        }
+        .tableActionBtnGroup {
+            display: none;
+        }
+        .MuiGrid-container {
+            align-items: center;
+        }
+        > .MuiGrid-container {
+            padding: 5px;
+            border-bottom: .5px solid #fbf5ee;
+            @media (min-width: 993px) {
+                &:hover {
+                    background: #FAF5EE;
+                    .messageTime {
+                        display: none;
+                    }
+                    .tableActionBtnGroup {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+    .tableBodyLeftCol {
+        display: flex;
+        .messageInContent {
+            padding-left: 25px;
+            @media (max-width: 767px) {
+                padding-left: 5px;
+            }
+        }
+    }
+    .searchField {
+        position: relative;
+        margin-left: 25px;
+        @media (max-width: 767px) {
+            margin-left: 5px;
+        }
+        .searchIcon {
+            position: absolute;
+            left: 0;
+            top: 2px
+        }
+        .searchInput {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            border: 1px solid #231F20;
+            width: 337px;
+            font-size: 14px;
+            padding: 10px 12px 12px 40px;
+            @media (max-width: 767px) {
+                width: 200px;
+            }
+
+        }
+    }
+}

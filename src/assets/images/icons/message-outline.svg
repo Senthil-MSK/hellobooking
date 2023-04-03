@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="Mail-Outline" transform="translate(0.002 0.002)">
+    <rect id="Surface" width="36" height="36" transform="translate(-0.002 -0.002)" fill="none"/>
+    <path id="mail_FILL0_wght300_GRAD0_opsz24" d="M4.525,21.375A2.017,2.017,0,0,1,2.5,19.35V6.525A2.017,2.017,0,0,1,4.525,4.5H21.85a2.017,2.017,0,0,1,2.025,2.025V19.35a2.017,2.017,0,0,1-2.025,2.025Zm8.662-7.819-9-5.738V19.35a.336.336,0,0,0,.337.337H21.85a.334.334,0,0,0,.337-.337V7.819Zm0-1.744,8.831-5.625H4.356Zm-9-3.994V19.35a.336.336,0,0,0,.337.337H4.188V7.819Z" transform="translate(5.375 5.625)" fill="#231f20"/>
+  </g>
+</svg>

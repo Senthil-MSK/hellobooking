@@ -1,0 +1,266 @@
+.messageWrapper {
+  box-shadow: 5px 5px 25px #00000029;
+  border: 1px solid #faf5ee;
+  + div {
+    display: none;
+  }
+  &.hidemsg {
+    display: none;
+  }
+  &.floatingBox {
+    width: 596px;
+    position: fixed;
+    bottom: 20px;
+
+    z-index: 1111;
+
+    @media (max-width: 992px) {
+      left: 50%;
+      margin-left: -298px;
+    }
+    @media (min-width: 993px) {
+      left: 318px;
+    }
+    + div {
+      display: block;
+    }
+    .uploadOuter {
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        flex-direction: row;
+        padding-bottom: 0;
+      }
+      .dragBox {
+        height: 58px;
+        line-height: 58px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    &,
+    &.floatingBox {
+      position: static;
+      margin-left: 0;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+.messageModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .messageModalOverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .messageModalContent {
+    background-color: #fff;
+    width: 596px;
+    border-top: 6px solid #80d99f;
+    text-align: center;
+    padding: 32px 20px;
+    position: relative;
+    z-index: 1;
+    svg {
+      color: #80d99f;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 14px;
+      margin: 0;
+      padding-bottom: 25px;
+    }
+    .modalBtn {
+      min-width: 218px;
+      background-color: #231f20;
+      border: 1px solid #231f20;
+      padding: 15px;
+      font-size: 14px;
+      color: #faf5ee;
+      text-align: center;
+    }
+  }
+}
+.sendBtnWrapper {
+  padding: 25px;
+  text-align: center;
+  border-bottom: 10px solid #faf5ee;
+  .btn {
+    min-width: 282px;
+    background-color: #231f20;
+    border: 1px solid #231f20;
+    padding: 15px;
+    font-size: 14px;
+    color: #faf5ee;
+    text-align: center;
+    &[disabled],
+    &.disabled {
+      background-color: #b3b2b3;
+      border-color: #b3b2b3;
+      pointer-events: none;
+    }
+  }
+}
+.fileName {
+  background: #faf5ee 0% 0% no-repeat padding-box;
+  border: 1px solid #e1cdc0;
+  padding: 2.5px;
+  font-size: 14px;
+  color: #231f20;
+  line-height: 17px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 6px;
+}
+.uploadedList {
+  display: flex;
+  padding: 6px 6px 0;
+  .attachIcon {
+    height: 23px;
+    svg {
+      margin-top: -7px;
+    }
+  }
+
+  .noStyleBtn {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    display: block;
+    margin-left: 3px;
+    height: 17px;
+    cursor: pointer;
+  }
+}
+.uploadWrapper {
+  padding: 12px 12px 0 12px;
+}
+.uploadOuter {
+  border: 2px dashed #ccc;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  max-width: 943px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .orText {
+    padding: 0 10px;
+    display: inline;
+  }
+  .btn {
+    text-decoration: underline;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .dragBox {
+    height: 40px;
+    line-height: 40px;
+    color: #999;
+    display: inline-block;
+    transition: transform 0.3s;
+    input[type="file"] {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+  .draging {
+    transform: scale(1.1);
+  }
+  @media (max-width: 992px) {
+    border: 0;
+    .dragBox,
+    .orText {
+      display: none;
+    }
+  }
+}
+.iconBtns {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  height: 36px;
+  margin-left: 10px;
+}
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #faf5ee;
+  padding: 10px;
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  .messageAction {
+    display: flex;
+  }
+}
+.messageBody {
+  background-color: #fff;
+  .selectTopic {
+    border-color: transparent;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px;
+    .MuiOutlinedInput-notchedOutline {
+      border: 0;
+    }
+  }
+  .messageSubject {
+    width: 100%;
+    border: 1px solid antiquewhite;
+    padding-left: 10px;
+    input {
+      height: 45px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .textareaStyle {
+    textarea {
+      width: 100%;
+
+      border: 1px solid #ccc;
+      border-left: 0;
+      border-right: 0;
+      padding: 10px;
+      min-height: 250px;
+      &:focus {
+        outline: navajowhite;
+      }
+    }
+  }
+}

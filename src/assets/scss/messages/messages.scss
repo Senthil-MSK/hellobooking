@@ -1,0 +1,10 @@
+.noStyleBtn {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    height: 36px;
+    + .noStyleBtn {
+        margin-left: 7px;
+    }
+}

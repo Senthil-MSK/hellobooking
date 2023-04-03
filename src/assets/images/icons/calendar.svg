@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>calendar-event copy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CCR_menu_revamp-Copy-4" transform="translate(-816.000000, -684.000000)">
+            <g id="Group-12-Copy-4" transform="translate(784.000000, 607.000000)">
+                <g id="calendar-event-copy" transform="translate(32.000000, 77.000000)">
+                    <polygon id="Path" points="0 0 15 0 15 15 0 15"></polygon>
+                    <rect id="Rectangle" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x="2.5" y="3.125" width="10" height="10" rx="0.5"></rect>
+                    <line x1="10" y1="1.875" x2="10" y2="4.375" id="Path" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <line x1="5" y1="1.875" x2="5" y2="4.375" id="Path" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <line x1="2.5" y1="4.875" x2="12.5" y2="4.875" id="Path" stroke="#000000" stroke-width="3" stroke-linejoin="round"></line>
+                    <rect id="Rectangle" stroke="#000000" stroke-width="0.9" fill="#000000" stroke-linecap="round" x="9" y="9.375" width="1.25" height="1.25"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

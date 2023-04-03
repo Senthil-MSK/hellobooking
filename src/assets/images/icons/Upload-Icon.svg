@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="Upload_Icon" data-name="Upload Icon" transform="translate(-0.061)">
+    <rect id="Rectangle_486" data-name="Rectangle 486" width="36" height="36" transform="translate(0.061)" fill="none"/>
+    <path id="upload_file_FILL0_wght300_GRAD0_opsz24" d="M11.25,18.375h1.5V13.95L14.6,15.8l1.05-1.075L12,11.075l-3.65,3.65,1.075,1.05L11.25,13.95ZM6.3,21.5a1.793,1.793,0,0,1-1.8-1.8V4.3A1.793,1.793,0,0,1,6.3,2.5h7.95L19.5,7.75V19.7a1.793,1.793,0,0,1-1.8,1.8Zm7.2-13V4H6.3a.354.354,0,0,0-.3.3V19.7a.354.354,0,0,0,.3.3H17.7a.354.354,0,0,0,.3-.3V8.5ZM6,4V4Z" transform="translate(5.5 6.5)" fill="#231f20"/>
+  </g>
+</svg>

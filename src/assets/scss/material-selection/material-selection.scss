@@ -1,0 +1,1065 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+:root {
+    --materialDetails-row-width: 100%;
+    --materialDetails-row-min-width: auto;
+    --materialDetails-image-size: 67px;
+    --imageGallery-size: 340px;
+    --imageGallery-thumbnail-size: 85px;
+    --black-btn-min-width: 240px;
+}
+
+.mainContent {
+    .imageGallery {
+        z-index: 1;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .galleryOverlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: #231F20;
+            opacity: .5;
+        }
+
+        .galleryContent {
+            position: relative;
+            z-index: 1;
+            max-width: var(--imageGallery-size);
+        }
+
+        .galleryHeader {
+            font-size: 22px;
+            color: #231F20;
+            background-color: #FAF5EE;
+            padding: 11px;
+            margin-bottom: 22px;
+        }
+
+        .currentImage {
+            border: 2px solid #231F20;
+            max-height: var(--imageGallery-size);
+            margin-bottom: 18px;
+
+            .img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .slick-arrow {
+                width: 48px;
+                height: 48px;
+
+                &.slick-disabled {
+                    opacity: .5;
+                }
+            }
+
+            .slick-arrow::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                display: block;
+                border-left: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+                transform: rotate(45deg);
+            }
+
+            .slick-next {
+                right: -52px;
+
+                &::before {
+                    transform: rotate(-135deg);
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .sliderThumb {
+            padding: 0 32px;
+
+            .img {
+                width: var(--imageGallery-thumbnail-size);
+                height: var(--imageGallery-thumbnail-size);
+                object-fit: cover;
+                border: 2px solid #231F20;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .slick-arrow {
+                top: 0;
+                height: 100%;
+                background-color: #FAF5EE;
+                transform: none;
+                left: -32px;
+                height: var(--imageGallery-thumbnail-size);
+                width: 32px;
+                padding-left: 3px;
+
+                &.slick-disabled {
+                    opacity: .5;
+                }
+            }
+
+            .slick-arrow::after,
+            .slick-arrow::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                border-left: 2px solid #231F20;
+                border-bottom: 2px solid #231F20;
+                transform: rotate(45deg);
+                font-size: 0;
+                opacity: 1;
+
+            }
+
+            .slick-arrow::after {
+                margin-left: -3px;
+            }
+
+            .slick-next {
+                left: auto;
+                right: -32px;
+                padding-left: 0;
+                padding-right: 3px;
+
+                &::before,
+                &::after {
+                    transform: rotate(225deg);
+                }
+            }
+        }
+    }
+
+    .fadeOut {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+    }
+
+    .fadeIn {
+        opacity: 1;
+        transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+    }
+
+    .customCheckBox {
+        position: relative;
+
+        .checkboxStyle {
+            height: 18px;
+            width: 18px;
+            border: 2px solid #231F20;
+            display: block;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked+.checkboxStyle {
+                background-color: #231F20;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 6px;
+                    top: 1px;
+                    width: 7px;
+                    height: 12px;
+                    border: solid white;
+                    border-width: 0 2px 2px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .blackBtn {
+        min-width: var(--black-btn-min-width);
+        border: 1px solid #231F20;
+        background-color: #231F20;
+        color: #FAF5EE;
+        padding: 15px 10px;
+        cursor: pointer;
+
+        &.disabled {
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: #231F20;
+                color: #FAF5EE;
+            }
+        }
+
+        &:hover {
+            background-color: #fff;
+            color: #231F20;
+        }
+    }
+
+    .linkStyleBtn {
+        text-decoration: underline;
+        background-color: transparent;
+        border: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &.greenText {
+            cursor: text;
+        }
+
+        svg {
+            font-size: 14px;
+        }
+
+        &.disabled {
+            opacity: .5;
+            pointer-events: none;
+        }
+    }
+
+    .greenText {
+        color: #7ED99F;
+    }
+
+    .redText {
+        color: #FF6160;
+    }
+
+    .rightAlign {
+        text-align: right;
+    }
+
+    .leftAlign {
+        text-align: left;
+    }
+
+    .mainContainer {
+        max-width: 1224px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tabsRightBtn {
+        border: 0;
+        background-color: transparent;
+        text-decoration: underline;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 0;
+        margin-bottom: 11px;
+        margin-top: -3px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .notificationbar {
+        border: 1px solid #231F20;
+        border-left-width: 4px;
+        display: flex;
+        align-items: center;
+        padding: 10px 8px;
+        width: 100%;
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+    .ant-tabs-nav {
+        margin-bottom: 10px;
+    }
+
+    .ant-tabs {
+        .ant-tabs-tab {
+            padding: 0 0 19px;
+        }
+
+        .ant-tabs-tab-active {
+            .ant-tabs-tab-btn {
+                color: #231F20;
+                font-family: 600;
+            }
+        }
+
+        .ant-tabs-ink-bar {
+            background-color: #231F20;
+            height: 4px;
+            border-radius: 2px;
+        }
+    }
+
+    .materialCard {
+        padding-top: 29px;
+
+        &.p-0 {
+            padding-top: 0;
+        }
+
+        .cardInnerInfo {
+            border-bottom: 6px solid #e1cdc0;
+            border-top: 1px solid #FAF5EE;
+            padding-top: 16px;
+        }
+
+        .materialDetails {
+            line-height: 18px;
+
+            label {
+                color: #231F2080;
+                font-size: 10px;
+                margin: 0;
+                font-weight: 600;
+            }
+
+            .greenText,
+            .redText {
+                font-weight: 700;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: var(--materialDetails-row-width);
+                min-width: var(--materialDetails-row-min-width);
+                padding-bottom: 22px;
+
+                .col {
+                    padding-top: 20px;
+
+                    a {
+                        display: flex;
+                        font-size: 13px;
+                        color: #231f20;
+                        word-break: break-all;
+
+                    }
+                }
+            }
+        }
+
+        .materialTitle {
+            font-size: 22px;
+            font-weight: 600;
+            padding-bottom: 25px;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .materialInfo {
+            padding-bottom: 16px;
+        }
+
+        .versionDropdown {
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #231F20;
+            padding: 0 50px;
+            white-space: nowrap;
+
+            svg {
+                margin: 0 5px;
+                font-weight: 400;
+            }
+
+
+        }
+
+        .versionDate {
+            border: 0;
+            background-color: transparent;
+            display: block;
+            text-align: center;
+            width: 100%;
+            font-weight: 500;
+
+            span {
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+
+        .materialInfoLeft {
+            display: flex;
+        }
+
+        .materialImage {
+            min-width: var(--materialDetails-image-size);
+            height: var(--materialDetails-image-size);
+            border: 0.5px solid #231F201A;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .materialInnerInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 12px;
+            line-height: 16px;
+            padding-top: 2px;
+            flex-grow: 1;
+
+            h4 {
+                font-size: 16px;
+                font-weight: 600;
+                margin: 0;
+                line-height: 20px;
+            }
+
+            .materialStatus {
+                background: #FBF1BD;
+                border: 1px solid #F9E586;
+                font-size: 14px;
+                font-weight: 400;
+                padding: 0 4px;
+                display: inline-block;
+
+                &.approved {
+                    background: #80D99F3D;
+                    border: 1px solid #7ED99F;
+                }
+            }
+        }
+
+        .materialRate {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 3px;
+
+            svg {
+                margin-right: 7px;
+                transform: scaleX(-1);
+                font-size: 22px;
+            }
+
+            .smlText {
+                font-size: 12px;
+            }
+        }
+
+        .materialVersions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #FAF5EE;
+            padding: 8px 0 7px;
+
+            .sideCol {
+                width: 200px;
+
+                .linkStyleBtn {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .prevVersion {
+                .linkStyleBtn {
+                    justify-content: flex-start;
+                }
+            }
+
+            .nextVersion {
+                .linkStyleBtn {
+                    justify-content: flex-end;
+                }
+            }
+
+            .ant-dropdown-menu {
+                border-radius: 0;
+                padding: 0;
+            }
+
+            .linkStyleBtn {
+                svg {
+                    margin: 0 7px;
+                }
+            }
+
+            .latestVersion {
+                svg {
+                    color: #7ED99F;
+                }
+            }
+
+            .ant-dropdown-menu-item {
+                padding: 16px;
+
+                &+.ant-dropdown-menu-item {
+                    border-top: 1px solid #FAF5EE;
+                }
+            }
+        }
+    }
+
+    .cardBottom {
+        padding: 10px 0;
+
+        .scollBtm {
+            display: block;
+            width: 100%;
+            background-color: #FAF5EE;
+            border: 1px solid #FAF5EE;
+            padding: 2px;
+        }
+    }
+
+    .tabContentTop {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .cardMessage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+        border-top: 1px solid #FAF5EE;
+        border-bottom: 1px solid #FAF5EE;
+        font-weight: 600;
+
+        &.acceptedCard {
+            svg {
+                color: #7ED99F;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .materialCardStyle {
+        .materialTitle {
+            padding-bottom: 15px;
+        }
+
+        .materialCard+.materialCard {
+            padding-top: 15px;
+            border-top: 1px solid #faf5ee;
+
+        }
+
+        .cardInnerInfo {
+            border-bottom: 0;
+            border-top: 1px solid #faf5ee;
+            padding-top: 16px;
+
+            .materialDetails {
+                border-bottom: 6px solid #e1cdc0;
+                border-top: 1px solid #FAF5EE;
+            }
+        }
+
+    }
+
+    .innerTabs {
+        margin-bottom: 15px;
+        border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+        display: flex;
+        overflow: auto;
+
+        .tabItem {
+            background-color: transparent;
+            border: 0;
+            padding: 12px 0 19px;
+            margin-right: 15px;
+            position: relative;
+            cursor: pointer;
+            white-space: nowrap;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 4px;
+                border-radius: 2px;
+                background-color: transparent;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            &.active::after {
+                background-color: #231F20;
+            }
+        }
+    }
+
+    .materialTags {
+        display: flex;
+        overflow: auto;
+
+        .btnTag {
+            border: 1px solid transparent;
+            background-color: transparent;
+            margin-right: 17px;
+            padding: 0 4px;
+            white-space: nowrap;
+
+            &.selected {
+                background-color: #faf5ee;
+                border-color: #E1CDC0;
+            }
+        }
+    }
+
+    .bottomBtnWrap {
+        text-align: right;
+        margin-top: -59px;
+
+    }
+
+    .signItems {
+        .materialTags {
+            padding-top: 13px;
+        }
+
+        .bottomBtnWrap {
+            margin-top: 10px;
+        }
+    }
+
+    .minHeightBox {
+        min-height: calc(100vh - 365px);
+    }
+
+    .removeBtn {
+        position: relative;
+        height: 48px;
+        width: 48px;
+        background-color: transparent;
+        border: 0;
+
+        &::after,
+        &::before {
+            width: 1px;
+            height: 15px;
+            top: 16px;
+            position: absolute;
+            content: "";
+            transform: rotate(45deg);
+            background-color: #000;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .modalWrapper {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+
+        .modalTitle {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .modalBtnWrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+
+            .linkStyleBtn {
+                text-decoration: none;
+                padding: 10px;
+                margin-right: 20px;
+                min-width: 100px;
+            }
+        }
+
+        .modalOverlay {
+            background: #231F20;
+            opacity: .5;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .modalContent {
+            background-color: #fff;
+            width: 596px;
+            max-width: 100%;
+            border-top: 6px solid #E1CDC0;
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+
+            .blackBtn {
+                min-width: 172px;
+            }
+        }
+    }
+
+    .itemsFooter2,
+    .itemsFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 22px;
+        font-weight: 600;
+        background: #E1CDC0;
+        border: 0.5px solid #C1A59A40;
+        padding: 13px;
+
+        .normalText {
+            font-weight: 400;
+        }
+    }
+
+    .itemsFooter2 {
+        padding: 5px 0;
+        background-color: #fff;
+        border: 0;
+        border-top: 34px solid #FAF5EE;
+    }
+
+    .signItemsHeader {
+        display: flex;
+        align-items: center;
+        background: #FAF5EE;
+        border: 0.5px solid #C1A59A40;
+        padding: 11px;
+
+        .backArrow {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            border: 0;
+            background-color: transparent;
+
+            &::after {
+                position: absolute;
+                width: 15px;
+                height: 1.5px;
+                content: "";
+                top: 16px;
+                left: 9px;
+                border-bottom: 1px solid #000;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                transform: rotate(45deg);
+                left: 10px;
+                top: 12px;
+                width: 10px;
+                height: 10px;
+                border-left: 1px solid #000;
+                border-bottom: 1px solid #000;
+            }
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding-top: 20px;
+        --black-btn-min-width: 158px;
+
+        .cardBottom .scollBtm {
+            display: none;
+        }
+
+        .bottomBtnWrap {
+            margin-top: 0;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 12px 20px;
+            background-color: #FAF5EE;
+            display: flex;
+            justify-content: center;
+            --black-btn-min-width: 340px;
+
+            .blackBtn {
+                display: block;
+            }
+        }
+
+        .cardBottom {
+            min-height: 72px;
+        }
+
+        .itemsFooter {
+            font-size: 14px;
+            position: fixed;
+            bottom: 72px;
+            left: 0;
+            right: 0;
+            padding: 10px 20px;
+        }
+
+        .minHeightBox {
+            padding-bottom: 121px;
+        }
+
+        .materialCardStyle {
+            .itemsFooter {
+                bottom: 0;
+            }
+
+            .itemsFooter2 {
+                position: fixed;
+                bottom: 44px;
+                left: 0;
+                right: 0;
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        .signItems {
+            .itemsFooter {
+                bottom: 72px;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {}
+
+    @media (min-width: 768px) {
+        --materialDetails-row-width: 50%;
+        --materialDetails-row-min-width: 550px;
+        --materialDetails-image-size: 98px;
+        --imageGallery-size: 50vh;
+        --imageGallery-thumbnail-size: 13vh;
+
+        .tabContentTop {
+            align-items: flex-end;
+        }
+
+        .tabsRightBtn {
+            margin-top: -22px;
+            margin-bottom: 22px;
+        }
+
+        .materialCard {
+            .materialInfo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .materialDetails {
+                .row .col {
+                    width: 33.33%;
+
+                    &.colRight {
+                        width: 25%;
+                    }
+
+                    &.colMid {
+                        width: 30%;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        // padding-left: 10px;
+        // padding-right: 10px;
+        --black-btn-min-width: 100%;
+
+        .bottomBtnWrap {
+            --black-btn-min-width: 100%;
+        }
+
+        .tabContentTop {
+            flex-direction: column-reverse;
+        }
+
+        .tabsRightBtn {
+            margin-top: 10px;
+        }
+
+        .imageGallery {
+            .galleryHeader {
+                margin-bottom: 0;
+                border-bottom: 6px solid #fff;
+            }
+
+            .currentImage {
+                margin-bottom: 6px;
+            }
+        }
+
+
+        .signItemsHeader h3 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .cardMessage {
+            flex-direction: column;
+            text-align: center;
+            padding-top: 33px;
+            padding-bottom: 33px;
+
+            svg {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+
+        .tabsRightBtn {
+            margin-bottom: 0;
+        }
+
+        .cardBottom {
+            padding-top: 0;
+        }
+
+        .ant-tabs-nav {
+            position: sticky;
+            top: 0;
+        }
+
+        .materialCard {
+            padding-top: 15px;
+
+            .materialTitle {
+                padding-bottom: 15px;
+            }
+
+            .materialRate {
+                margin-left: -77px;
+                padding-bottom: 5px;
+            }
+
+            .materialVersions {
+                padding-top: 15px;
+
+                .ant-dropdown {
+                    min-width: calc(100vw - 60px) !important;
+                }
+            }
+
+            .materialInnerInfo {
+                padding-top: 7px;
+
+                h4 {
+                    min-height: 50px;
+                }
+
+                .materialStatus {
+                    position: absolute;
+                    white-space: nowrap;
+                    right: 0;
+                    top: -1px;
+                }
+            }
+
+            .cardInnerInfo {
+                position: relative;
+                padding-bottom: 70px;
+                padding-top: 20px;
+
+                .acceptBtnWrap {
+                    position: absolute;
+                    text-align: center;
+                    bottom: 22px;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            .materialDetails {
+                .row .col {
+                    width: 50%;
+                }
+            }
+
+            .prevVersion {
+                display: none;
+            }
+
+            .versionDropdown {
+                padding-left: 0;
+                font-size: 16px;
+                padding-right: 0;
+
+                svg {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .materialCardStyle {
+            .cardInnerInfo {
+                padding-bottom: 0;
+            }
+
+            .materialInfo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+            }
+        }
+
+    }
+
+    @media (max-width: 480px) {
+        .modalWrapper .modalBtnWrap {
+            flex-direction: column-reverse;
+
+            .linkStyleBtn {
+                margin-right: 0;
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+    }
+}

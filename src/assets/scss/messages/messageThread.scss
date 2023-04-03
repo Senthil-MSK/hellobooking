@@ -1,0 +1,69 @@
+.messageThreadWrapper {
+    @media (min-width: 993px) {
+        padding-left: 30px;
+    }
+    .messageThreadHeader {
+        background-color: #FAF5EE;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+    }
+    .threadLeftCol {
+        display: flex;
+        align-items: center;
+        a {
+            height: 36px;
+            margin-right: 10px;
+        }
+        h3 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+    .threadrightCol {
+        display: flex;
+    }
+    .msgBody {
+        border: 1px solid #E1CDC0;
+        padding: 10px;
+        border-bottom: 6px solid #FAF5EE;
+        font-size: 14px;
+    }
+    .msgContent {
+        padding: 25px 0;
+        .msgTopInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+        .msgTopInfoLeftCol {
+            display: flex;
+            align-items: center;
+        }
+        .profileImg {
+            width: 64px;
+            height: 64px;
+            border: 1px solid #231F20;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #231F20;
+            margin-right: 10px;
+            font-size: 30px;
+            color: #fff;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

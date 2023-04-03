@@ -1,0 +1,6 @@
+<svg id="High_Priority_Icon" data-name="High Priority Icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <path id="priority_high_FILL0_wght300_GRAD200_opsz20" d="M9.483,12.521a1.064,1.064,0,0,1-.793-.328,1.084,1.084,0,0,1-.322-.786,1.066,1.066,0,0,1,.328-.793,1.084,1.084,0,0,1,.786-.322,1.064,1.064,0,0,1,.793.328,1.084,1.084,0,0,1,.322.786,1.064,1.064,0,0,1-.328.793A1.084,1.084,0,0,1,9.483,12.521ZM8.354,8.892V2.521h2.257V8.892Z" transform="translate(7 8.188)" fill="#ff615f"/>
+  <g id="Notification_Mark" data-name="Notification Mark" transform="translate(22185 -6954)">
+    <rect id="Surface" width="32" height="32" transform="translate(-22185 6954)" fill="none"/>
+  </g>
+</svg>
